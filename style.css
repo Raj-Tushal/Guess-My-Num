@@ -135,10 +135,12 @@ html,body{
 }
 
 .message{
-    font-size: 3vw;
+    /* font-size: 3vw; */
+    font-size: 200%;
     color: red;
     font-weight: 600;
     display: none;
+    margin-top: 15px;
 }
 
 @media (max-width:600px) {
@@ -188,6 +190,10 @@ html,body{
       }
       h3{
         font-size: 110%;
+      }
+      .message {
+        font-size: 150%;
+        margin-top: 25px;
       }
       
 }
