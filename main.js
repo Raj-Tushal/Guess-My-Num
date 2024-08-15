@@ -65,6 +65,7 @@ checkBtn.addEventListener("click",()=>{
         if (currentScore<=0) {
             highScore.textContent=0;
             alert("Game Over!, Try Again")
+            location.reload();
         }
     }
 })
