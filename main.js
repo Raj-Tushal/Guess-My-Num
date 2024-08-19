@@ -24,17 +24,18 @@ checkBtn.addEventListener("click", () => {
     if (randomNum === userNum) {
         mahineNo.innerHTML = userNum;
         message.style.display = "block";
-        message.innerHTML = "Congratulations! </br> You've guessed it right.";
+        message.innerHTML = "Congratulations! <br> You've guessed it right.";
         
         mahineNo.style.backgroundColor = "red";
 
-        setTimeout(()=>{ 
+        setTimeout(() => { 
             userNo.value = '';
             mahineNo.innerHTML = '?';
             message.style.display = "none";
             currentScore = 20;
             score.textContent = currentScore;
-            location.reload(location.reload())},5000);
+            location.reload(); 
+        }, 5000);
 
         if (currentScore > maxScore) {
             maxScore = currentScore;
@@ -43,16 +44,18 @@ checkBtn.addEventListener("click", () => {
 
         score.textContent = 0;
         currentScore = 20;
-    } else if (userNum < randomNum) {
-        message.style.display = "block";
-        message.innerHTML = "My number is greater than " + userNum;
-    } else if (userNum > randomNum) {
-        message.style.display = "block";
-        message.innerHTML = "My number is less than " + userNum;
     } else {
-        machineNo.innerHTML = "?";
-        currentScore--;
-        score.textContent = currentScore;
+        currentScore--; 
+
+        if (userNum < randomNum) {
+            message.style.display = "block";
+            message.innerHTML = "My number is greater than " + userNum;
+        } else if (userNum > randomNum) {
+            message.style.display = "block";
+            message.innerHTML = "My number is less than " + userNum;
+        }
+
+        score.textContent = currentScore; 
 
         if (currentScore <= 0) {
             highScore.textContent = 0;
