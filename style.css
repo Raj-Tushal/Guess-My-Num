@@ -141,6 +141,7 @@ html,body{
     font-weight: 600;
     display: none;
     margin-top: 15px;
+    text-align: center;
 }
 
 @media (max-width:600px) {
